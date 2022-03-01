@@ -16,4 +16,4 @@ const dataItem = [
   },
 ];
 
-export default { dataItem };
+export default dataItem;
