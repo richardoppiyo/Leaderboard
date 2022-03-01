@@ -1,6 +1,6 @@
 import './style.css';
-import { containerSection } from './modules/elements.js';
-import { dataItem } from './modules/data.js';
+import containerSection from './modules/elements.js';
+import dataItem from './modules/data.js';
 
 dataItem.forEach((item) => {
   const content = `
