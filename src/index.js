@@ -1,18 +1,41 @@
 import './style.css';
-import refreshBtn from './modules/elements.js';
-import populate from './modules/data.js';
 
+import { renderPage, addChild } from './modules/render-page.js';
+import { fetchScores, sendScore } from './modules/api.js';
 
+const sendFormData = () => {
+  const user = document.querySelector('#user');
+  const score = document.querySelector('#score');
+  if (user.value !== '' && score.value !== '') {
+    const formData = { user: user.value, score: score.value };
+    sendScore(formData);
+    addChild(formData);
+    return true;
+  }
+  return false;
+};
 
-refreshBtn.addEventListener('click', populate);
+const eventHandler = (eventType, selector, callback) => {
+  document.addEventListener(eventType, (e) => {
+    if (e.target.matches(selector) && true) callback(e);
+  });
+};
 
-//
-// dataItem.forEach((item) => {
-//   const content = `
-//               <div class="items">
-//                 <p>${item.name} : </p>
-//                 <p> ${item.score}</p>
-//               </div>
-//               `;
-//   containerSection.innerHTML += content;
-// });
+eventHandler('click', '#score-submit', (e) => {
+  e.preventDefault();
+  const form = document.querySelector('.score-submit-form');
+  sendFormData();
+  form.reset();
+});
+
+eventHandler('click', '#btn-refresh', () => {
+  fetchScores().then((data) => {
+    renderPage(data.result);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchScores().then((data) => {
+    renderPage(data.result);
+  });
+});
