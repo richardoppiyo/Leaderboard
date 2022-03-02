@@ -1,3 +1,4 @@
-const containerSection = document.querySelector('.scorebody');
+// const containerSection = document.querySelector('.scorebody');
+const refreshBtn = document.querySelector('.refresher');
 
-export default containerSection;
+export default refreshBtn;
