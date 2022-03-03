@@ -1,25 +1,62 @@
+@import 'https://fonts.googleapis.com/css?family=Rubik+One';
+
+body {
+  background-image: url('/src/images/back-2.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  padding-top: 38px;
+}
+
+.page-header {
+  margin-left: 180px;
+  color: #fff;
+  font-size: 90px;
+  font-family: 'Moo Lah Lah', cursive;
+}
+
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .title-box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-left: 30px;
 }
 
-.score-list,
-.wrapper-score-submit {
+.sub-title,
+.form-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.score-list {
   border: 0.5px solid #000;
   width: 40%;
+  background-color: #fff;
+  border-radius: 7%;
+}
+
+.wrapper-score-submit {
+  width: 40%;
+  text-align: center;
 }
 
 .btn-refresh {
-  width: 120px;
-  height: 30px;
-  margin: 25px 0 0 150px;
+  width: 110px;
+  height: 50px;
+  margin: 30px 0 0 140px;
+  font-family: 'Merienda One', cursive;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 35%;
 }
 
 .score-list-box {
@@ -32,8 +69,78 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-left: 20px;
 }
 
 .score-list-row p {
   margin: 10px;
+}
+
+.score-list-name {
+  width: 60%;
+  font-family: 'Pacifico', cursive;
+}
+
+.wrapper-input {
+  margin: 25px;
+}
+
+#score,
+#user {
+  height: 25px;
+  width: 80%;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
+#score-submit {
+    margin: 20px;
+}
+
+#score-submit  {
+	color: white;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	font-family: 'Merienda One', cursive;
+	text-decoration: none;
+	font-size: 2vw;
+	transition: all .5s;
+	background-color: #3498db;
+
+	&::before {
+    @extend %test;
+		bottom: -15px;
+		height: 15px;
+		width: 100%;
+		left: 8px;
+		transform: skewX(45deg);
+		background-color: darken(#3498db, 20%);
+	}
+
+	&::after {
+		@extend %test;
+		right: -15px;
+		height: 100%;
+		width: 15px;
+		bottom: -8px;
+		transform: skewY(45deg);
+		background-color: darken(#3498db, 30%);
+	}
+
+	&:active {
+		margin-left: 10px;
+		margin-top: 10px;
+		&::before {
+			bottom: -5px;
+			height: 5px;
+			left: 3px;
+		}
+
+    &::after {
+			right: -5px;
+			width: 5px;
+			bottom: -3px;
+		}
+	}
 }
