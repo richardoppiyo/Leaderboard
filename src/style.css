@@ -1,6 +1,4 @@
-/* stylelint-disable csstree/validator */
 /* stylelint-disable indentation */
-
 @import 'https://fonts.googleapis.com/css?family=Rubik+One';
 
 body {
@@ -115,7 +113,7 @@ main {
 	width: 100%;
 	left: 8px;
 	transform: skewX(45deg);
-	background-color: darken(#3498db, 20%);
+	background-color: #3498db;
 }
 
 #score-submit::after {
@@ -124,7 +122,7 @@ main {
 	width: 15px;
 	bottom: -8px;
 	transform: skewY(45deg);
-	background-color: darken(#3498db, 30%);
+	background-color: #3498db;
 }
 
 #score-submit:active {

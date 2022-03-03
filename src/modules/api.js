@@ -1,7 +1,7 @@
-const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oi30gNm2QXH7NcuJGkRM/scores';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oi30gNm2QXH7NcuJGkRM/scores';
 
 const sendScore = async (formData) => {
-  const response = await fetch(baseUrl, {
+  const response = await fetch(BASE_URL, {
     method: 'POST',
     body: JSON.stringify(formData),
     headers: {
@@ -13,7 +13,7 @@ const sendScore = async (formData) => {
 };
 
 const fetchScores = async () => {
-  const response = await fetch(baseUrl);
+  const response = await fetch(BASE_URL);
   const scores = response.json();
   return scores;
 };
