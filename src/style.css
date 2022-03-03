@@ -94,11 +94,11 @@ main {
 }
 
 #score-submit {
-    margin: 20px;
+  margin: 20px;
 }
 
-#score-submit  {
-	color: white;
+#score-submit {
+  color: white;
 	position: absolute;
 	transform: translate(-50%, -50%);
 	vertical-align: middle;
@@ -108,7 +108,7 @@ main {
 	transition: all .5s;
 	background-color: #3498db;
 
-	&::before {
+  &::before {
     @extend %test;
 		bottom: -15px;
 		height: 15px;
