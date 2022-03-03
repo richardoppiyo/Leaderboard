@@ -4,6 +4,7 @@
 
 > The project consumes apis to add and dispalau users.
 
+![screenshot](./demo.png)
 
 ## Built With
 - Major Languages: JAVASCRIPT, HTML, CSS
@@ -48,9 +49,33 @@ linter - `npx stylelint "**/*.{css,scss}"` on the root of your directory of your
 
 
 ### Run project
-- Now runt the following:
+- Now run the following:
  `npm install`  - on the root directory of the project to install the required packages
  `npm start`   - on the root directory of the project to start the project 
+
+
+### API Information
+The leaderboard API is accessed using the following base url:
+https://us-central1-js-capstone-backend.cloudfunctions.net/api/
+
+**Endpoints**
+1. /games/
+- Make a POST request with the following parameters to create a game:
+  { 
+  "name": "Name of the game" 
+}
+
+2. /games/:id/scores/
+-Make a POST to create a new score for the given game
+The parameters for POST are as follows:
+  { 
+  "user": "John Doe",
+  "score": 42
+ }
+
+-Make a GET to get a list of scores for the given game
+
+
 
 ## Authors
 
